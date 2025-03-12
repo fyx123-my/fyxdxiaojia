@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta name="viewport" content="widt=device-width,initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="letter.css">
+  <link rel="stylesheet" href="cake.css">
+  <title>单页切换示例</title>
+</head>
+
+<body>
+    <div class="page-container">
+        <div id="ball" class="ball"></div>
+        <div id="page1" class="page">
+            <div class="card">
+            
+                <div class="text content">
+                生日快乐
+                </div>
+                    <div class="textTwo content">
+                    ！！！
+                    </div>
+                <div class="heart content"></div>
+            </div>
+        </div>
+        <div id="page2" class="page" style="display: none;">
+            <div class="cake-wrapper">
+                <!-- 蛋糕主体 -->
+                <div class="cake">
+                    <!-- 底层 -->
+                    <div class="cake-base"></div>
+                    <div class="decoration"></div>
+                
+                    <!-- 中间层 -->
+                    <div class="cake-layer">
+                        <!-- 蜡烛 --> <div class="decoration"></div>
+                        <div class="candle">
+                            <div class="flame flame-main"></div>
+                            <div class="flame flame-aura"></div>
+                            </div>
+                        </div>
+                    
+                    <!-- 顶层装饰 -->
+                        <div class="cake-topping"></div>
+                    </div>
+                </div>
+        </div>
+        <div id="page3" class="page" style="display: none;">
+            <video src="xulie2.mp4" controls="controls" autoplay width="400vw"height="500vh"></video>
+        </div>
+    </div>
+  <script src="script.js"></script>
+  <script src="letter.js"></script>
+</body>
+
+</html>

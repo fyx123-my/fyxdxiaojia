@@ -1,0 +1,162 @@
+/* 基础重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* 蛋糕容器 */
+.cake-wrapper {
+    position: relative;
+    width: 50vw;
+    height: 40vh;
+}
+
+/* 蛋糕基础结构 */
+.cake {
+    position: absolute;
+    bottom: 1vh;/*底部100*/
+    width: 100%;
+}
+
+/* 蛋糕底层 */
+.cake-base {
+    width: 50vw;
+    height: 7vh;
+    background: #8B4513;
+    margin: 0 auto;
+    border-radius: 15px 15px 5px 5px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    position: relative;
+    bottom: -150px; bottom: 3vh;
+    z-index: 2;
+}
+
+/* 蛋糕主体层 */
+.cake-layer {
+    width: 40vw;
+    height: 20vh;
+    background: linear-gradient(160deg, #ff9999 0%, #ff6666 100%);
+    margin: -50vh auto 0;
+    border-radius: 20px 20px 0 0;
+    position: relative;
+    bottom: -25vh;
+
+}
+
+/* 蛋糕顶层装饰 */
+.cake-topping {
+    position: absolute;
+    
+    left: 50%;
+    bottom: 0vh;
+    transform: translateX(-50%);
+    width: 45vw;
+    height: 5vh;
+    background: #03cdf0;
+    border-radius: 15px;
+    opacity: 0.8;
+    background-image: 
+        linear-gradient(90deg, 
+            transparent 20%,
+            #05acf4 50%,
+            transparent 80%
+        );
+}/* 蛋糕装饰 */
+.decoration {
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  /* 糖粒装饰 */
+  .decoration:nth-child(1) { /* 底部装饰 */
+    top: -1vh;
+    left: 20%;
+    width: 3vw;
+    height: 2vh;
+  }
+  .decoration:nth-child(2) { /* 顶部装饰 */
+    top: -6vh;
+    left: 60%;
+    width: 3vw;
+    height: 3vh;
+  }
+
+/* 蜡烛样式 */
+.candle {
+    position: absolute;
+    top: -10vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4vw;
+    height: 10vh;
+    background: #ffffff;
+    border-radius: 5px 5px 0 0;
+    box-shadow: 
+        inset 0 -10px 20px rgba(255,200,200,0.5),
+        0 0 10px rgba(255,255,255,0.3);
+}
+
+/* 火焰基础样式 */
+.flame {
+    position: absolute;
+    border-radius: 50% 50% 35% 35%;
+    transform-origin: bottom center;
+}
+
+/* 主火焰 */
+.flame-main {
+    width: 5vw;
+    height: 7vh;
+    position: absolute;
+    top: -20vh;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(
+        180deg,
+        #ffd700 0%,
+        #ff4500 70%,
+        #fd0101 100%
+    );
+    animation: 
+        flame-flicker 0.1s infinite alternate,
+        flame-move 2s ease-in-out infinite;
+        filter: blur(3px);
+}
+
+/* 火焰光晕 */
+.flame-aura {
+    width: 25px;
+    height: 40px;
+    top: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255,165,0,0.3);
+    filter: blur(8px);
+    animation: 
+        aura-pulse 1.5s ease infinite;
+}
+
+/* 火焰闪烁动画 */
+@keyframes flame-flicker {
+    0% { transform: translateX(-50%) scale(1); }
+    50% { transform: translateX(-50%) scale(1.1) skew(3deg); }
+    100% { transform: translateX(-50%) scale(0.95); }
+}
+
+/* 火焰移动动画 */
+@keyframes flame-move {
+    0%, 100% { top: -35px; }
+    50% { top: -38px; }
+}
+
+/* 光晕脉冲动画 */
+@keyframes aura-pulse {
+    0% { opacity: 0.4; transform: translateX(-50%) scale(0.9); }
+    50% { opacity: 0.7; transform: translateX(-50%) scale(1.2); }
+    100% { opacity: 0.4; transform: translateX(-50%) scale(0.9); }
+}
